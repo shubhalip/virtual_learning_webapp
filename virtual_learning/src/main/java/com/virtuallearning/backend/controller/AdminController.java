@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.virtuallearning.backend.exception.ResourceNotFoundException;
 import com.virtuallearning.backend.model.Admin;
 import com.virtuallearning.backend.repository.AdminRepository;
 
