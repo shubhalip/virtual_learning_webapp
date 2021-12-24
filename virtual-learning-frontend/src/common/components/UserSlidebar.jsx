@@ -15,19 +15,12 @@ import ListItemButton from './ListItemButton';
 
 export const listItems = (
   <div>
-    <ListItemButton text="Courses" exact path="/adashboard">
+    <ListItemButton text="Courses" exact path="/udashboard">
       <DashboardIcon />
     </ListItemButton>
     <Divider />
-    <ListItemButton text="Users"   path="/adashboard/users">
-      <AccountCircleIcon />
-    </ListItemButton>
-    <Divider />
-    <ListItemButton text="Contacts"   path="/adashboard/contacts">
-      <CallIcon />
-    </ListItemButton>
-    <Divider />
-    <ListItemButton text="Feedbacks"   path="/adashboard/feedbacks">
+  
+    <ListItemButton text="Feedbacks"   path="/udashboard/feedbacks">
       <FeedbackIcon />
     </ListItemButton>
     <Divider />
