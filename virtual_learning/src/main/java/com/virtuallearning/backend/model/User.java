@@ -20,8 +20,7 @@ public class User {
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "adress")
-	private String adress;
+	
 	
 	@Column(name = "phone")
 	private String phone;
@@ -32,8 +31,7 @@ public class User {
 	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "upload_photo", columnDefinition = "TEXT")
-	private String uploadPhoto;
+	
 	
 	@Column(name = "register_date")
 	private LocalDate registerDate;
@@ -41,14 +39,13 @@ public class User {
 	public User() {
 	}
 	
-	public User(String name, String adress, String phone, String email, String password, String uploadPhoto, LocalDate registerDate) {
+	public User(String name, String adress, String phone, String email, String password, LocalDate registerDate) {
 		super();
 		this.name = name;
-		this.adress = adress;
+		
 		this.phone = phone;
 		this.email = email;
 		this.password = password;
-		this.uploadPhoto = uploadPhoto;
 		this.registerDate = registerDate;
 	}
 	
@@ -68,13 +65,7 @@ public class User {
 		this.name = name;
 	}
 	
-	public String getAdress() {
-		return adress;
-	}
 	
-	public void setAdress(String adress) {
-		this.adress = adress;
-	}
 	
 	public String getPhone() {
 		return phone;
@@ -99,14 +90,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public String getUploadPhoto() {
-		return uploadPhoto;
-	}
-	
-	public void setUploadPhoto(String uploadPhoto) {
-		this.uploadPhoto = uploadPhoto;
-	}
+
 	
 	public LocalDate getRegisterDate() {
 		return registerDate;

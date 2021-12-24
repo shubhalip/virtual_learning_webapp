@@ -29,6 +29,28 @@ public class AdminController {
 	@Autowired
 	private AdminRepository adminRepository;
 	
+	
+	
+	@PostMapping("/alogin")
+	@CrossOrigin(origins = "http://localhost:3000")
+	public boolean loginVerified(@RequestBody Admin admin) {
+		Admin fetchedAdmin =adminRepository.findByEmail(admin.getEmail());
+		System.out.println(fetchedAdmin);
+		if(fetchedAdmin == null) {
+			System.out.println("Admin is null");
+			return false;
+		}
+		String matchedPassword = fetchedAdmin.getPassword();
+		if(matchedPassword.equals(admin.getPassword()) ) {
+			System.out.println("Admin matched");
+			return true;
+		}
+		else {
+			System.out.println("Wrong Login");
+			return false;
+		}
+	}
+	
 	@GetMapping("/admins")
 	public List<Admin> getAllAdmins(){
 		return adminRepository.findAll();
@@ -36,6 +58,7 @@ public class AdminController {
 	
 	@PostMapping("/admins")
 	public Admin createAdmin(@RequestBody Admin admin) {
+		System.out.println("Admin Added");
 		return adminRepository.save(admin);
 	}
 	

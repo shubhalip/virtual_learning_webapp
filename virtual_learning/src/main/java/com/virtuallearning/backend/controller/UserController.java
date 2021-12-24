@@ -39,6 +39,28 @@ public class UserController {
 		}
 		
 	}
+
+	
+	
+	@PostMapping("/ulogin")
+	@CrossOrigin(origins = "http://localhost:3000")
+	public boolean loginVerified(@RequestBody User user) {
+		User fetchedUser = userRepository.findByEmail(user.getEmail());
+		System.out.println(fetchedUser);
+		if(fetchedUser == null) {
+			System.out.println("User is null");
+			return false;
+		}
+		String matchedPassword = fetchedUser.getPassword();
+		if(matchedPassword.equals(user.getPassword()) ) {
+			System.out.println("User matched");
+			return true;
+		}
+		else {
+			System.out.println("Wrong Login");
+			return false;
+		}
+	}
 	
 	@GetMapping("/users/{id}")
 	public ResponseEntity<User> getUserByName(@PathVariable Long id) {
@@ -49,6 +71,8 @@ public class UserController {
 	@PostMapping("/users")
 	public User createUser(@RequestBody User user) {
 		user.setRegisterDate(LocalDate.now());
+		System.out.println("user added");
+
 		return userRepository.save(user);
 	}
 	
@@ -58,10 +82,8 @@ public class UserController {
 		user.setName(userDetails.getName());
 		user.setEmail(userDetails.getEmail());
 		user.setPassword(userDetails.getPassword());
-		user.setAdress(userDetails.getAdress());
 		user.setPhone(userDetails.getPhone());
 		user.setName(userDetails.getName());
-		user.setUploadPhoto(userDetails.getUploadPhoto());
 		User updatedUser = userRepository.save(user);
 		return ResponseEntity.ok(updatedUser); 
 	}
