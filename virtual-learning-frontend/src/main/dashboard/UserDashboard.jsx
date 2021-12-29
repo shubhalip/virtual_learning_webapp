@@ -1,6 +1,6 @@
 
 import * as React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
@@ -48,7 +48,7 @@ function UserDashboard() {
                                     </Paper>
                                 </Grid>
                             </Grid>
-                            <Footer sx={{ pt: 4 }} />
+                           
                         </Container>
             </Box>
             <Message />

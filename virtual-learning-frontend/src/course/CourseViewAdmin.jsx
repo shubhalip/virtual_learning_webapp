@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TableViewUser from '../table/TableViewUser'
+import TableView from '../table/TableView'
 
 const courseColumns = [
   { title: "Resource", field: "resource" },
@@ -22,15 +22,15 @@ const detailPanel = data => {
   )
 }
 
-class CourseView extends Component {
+class CourseViewAdmin extends Component {
 
   render() {
     return (
-      <TableViewUser detailPanel={detailPanel} model="course" field="name" columns={courseColumns} functions={{ 
+      <TableView detailPanel={detailPanel} model="course" field="name" columns={courseColumns} functions={{ 
         setStateValue: this.props.setStateValue,
         setModalVisibility: this.props.setModalVisibility }} />
     )
   }
 }
 
-export default CourseView
+export default CourseViewAdmin

@@ -6,7 +6,7 @@ import {
     useRouteMatch,  } from "react-router-dom";
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import CourseView from '../course/CourseView'
+import CourseViewAdmin from '../course/CourseViewAdmin'
 import UserView from '../user/UserView'
 import ContactView from '../contact/ContactView'
 import FeedbackView from '../feedback/FeedbackView'
@@ -28,7 +28,7 @@ class AdminRoutes extends Component {
             <div className='content-wrapper'>
            
                 <Routes>
-                    <Route exact path="/"  exact element={<CourseView setStateValue={this.props.setCourse} setModalVisibility={this.props.setModalVisibility} />} />
+                    <Route exact path="/"  exact element={<CourseViewAdmin setStateValue={this.props.setCourse} setModalVisibility={this.props.setModalVisibility} />} />
                     <Route  exact path="/users/"  exact element={<UserView setStateValue={this.props.setUser} setModalVisibility={this.props.setModalVisibility} />} />
                     <Route  exact path="/contacts/" exact element={<ContactView setStateValue={this.props.setContact} setModalVisibility={this.props.setModalVisibility} />} />
                     <Route  exact path="/feedbacks/" exact  element={<FeedbackView setStateValue={this.props.setFeedback} setModalVisibility={this.props.setModalVisibility} />} />

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ToastContainer,toast } from 'react-toastify';
 import AuthService from './AuthService';
 import axios from 'axios';
-import {toastr} from 'react-redux-toastr'
+import { toastr } from 'react-redux-toastr'
 import Message from '../common/messages/Messanger'
 
 import {Navigate} from 'react-router-dom';
@@ -50,9 +50,13 @@ class AdminLoginComponent extends Component {
            if(response.data == true){
              this.setState({ redirectToReferrer: true })
            }
+           else{
+            toastr.error('Oops.. Wrong Username or Password.')
+
+           }
           })
           .catch(error => {
-            toastr.error('Oops.. Wrong Email or Password.')
+            toastr.error('Oops.. Wrong Username or Password.')
            console.log(error)
 
           })

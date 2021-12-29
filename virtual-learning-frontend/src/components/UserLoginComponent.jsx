@@ -50,6 +50,10 @@ class UserLoginComponent extends Component {
            if(response.data == true){
              this.setState({ redirectToReferrer: true })
            }
+           else{
+            toastr.error('Oops.. Wrong Username or Password.')
+
+           }
           })
           .catch(error => {
             toastr.error(' Oops.. Wrong Email or Password.')

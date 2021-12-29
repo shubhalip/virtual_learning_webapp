@@ -42,7 +42,7 @@ function Header(props) {
                     sx={{ marginRight: '36px', ...(props.open && { display: 'none' }), }} >
                     
                 </IconButton>
-                <Typography component="h1" variant="h6"  color="inherit" fontWeight="bold" noWrap sx={{ flexGrow: 1 }}><b>E-Learning</b></Typography>
+                <Typography component="h1" variant="h6"  color="inherit" fontWeight="bold" noWrap sx={{ flexGrow: 1 }}><b>Virtual-Learning</b></Typography>
                
                
             </Toolbar>
@@ -69,7 +69,7 @@ function Head(props) {
                    sx={{ marginRight: '36px', ...(props.open && { display: 'none' }), }} >
                   
                </IconButton>
-               <Typography component="h1" variant="h6"  color="inherit" fontWeight="bold" noWrap sx={{ flexGrow: 1 }}><b>E-Learning</b></Typography>
+               <Typography component="h1" variant="h6"  color="inherit" fontWeight="bold" noWrap sx={{ flexGrow: 1 }}><b>Virtual-Learning</b></Typography>
               
                <form className="d-flex">
                <Button startIcon={<LogoutIcon />} color="secondary" variant="contained" onClick={AuthService.logout} href="/">
